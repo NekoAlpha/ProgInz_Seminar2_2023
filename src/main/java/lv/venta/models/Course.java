@@ -1,7 +1,15 @@
 package lv.venta.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,6 +23,19 @@ import lombok.ToString;
 @ToString
 public class Course {
 	
+	@Setter(value = AccessLevel.NONE)
+	@Column(name = "Idc")//DB puse būs kolonna "idp" un būs kā auto increment PK
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long idc;
+	
+	@Column(name = "Title")//DB puse būs kolonna title
+	@NotNull
+	@Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam")
+	@Size(min = 5, max = 25, message = "Jabūt vismaz 5 un ne vairāk kā 25 simboliem")
+	private String title;
+	
+	private int creditPoints;
 	
 	
 	
