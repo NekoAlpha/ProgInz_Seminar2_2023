@@ -40,7 +40,7 @@ public class ProgInzSeminar220231Application {
 				stRepo.save(st1);
 				stRepo.save(st2);
 				
-				Course c1 = new Course("JAVA I", 4, pr1);
+				Course c1 = new Course("Java i", 4, pr1);
 				Course c2 = new Course("Datubazes", 4, pr2);
 				courRepo.save(c1);
 				courRepo.save(c2);
@@ -50,6 +50,11 @@ public class ProgInzSeminar220231Application {
 				grRepo.save(new Grade(8, st2, c1));
 				grRepo.save(new Grade(10, st2, c2));
 
+				//TODO izveidot jaunu zaru un pāriet uz to (git branch xxxxx, git checkout xxxxx)
+				//TODO pārveidot saiti starp professoru un kursu uz ManyRoMany
+				//TODO pamainīt testModel funkciju, ieliekot 1.professoram divus kursus un 1.kursam, ka to pasniedz abi professori
+				
+				
 				
 			}
 		};

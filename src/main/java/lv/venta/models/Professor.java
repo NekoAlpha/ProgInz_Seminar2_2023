@@ -50,7 +50,7 @@ public class Professor {
 	private String surname;
 	
 	@Column(name = "Degree")//DB puse būs kolonna title
-	@NotBlank
+	@NotNull
 	private Degree degree;
 
 	@OneToOne(mappedBy = "professor")//sasaistam ar otras klases mainīgo

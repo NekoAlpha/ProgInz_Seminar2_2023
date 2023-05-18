@@ -44,7 +44,7 @@ public class Student {
 	@Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem")
 	private String surname;
 
-	@OneToMany(mappedBy = "Student")
+	@OneToMany(mappedBy = "student")
 	@ToString.Exclude
 	private Collection<Grade> grades;
 	
