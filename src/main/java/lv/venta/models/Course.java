@@ -53,8 +53,17 @@ public class Course {
 	
 	@OneToMany(mappedBy = "course")
 	private Collection<Grade> grades;
+
+	public Course(
+			@NotNull @Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam") @Size(min = 5, max = 25, message = "Jabūt vismaz 5 un ne vairāk kā 25 simboliem") String title,
+			@Min(1) @Max(20) int creditPoints, Professor professor) {
+		this.title = title;
+		this.creditPoints = creditPoints;
+		this.professor = professor;
+	}
 	
-	//TODO izveidot argumenta konstruktoru
+	
+
 	
 	
 	

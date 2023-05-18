@@ -57,7 +57,6 @@ public class Professor {
 	private Course course;
 	
 	public Professor(String name, String surname, Degree degree) {
-		super();
 		this.name = name;
 		this.surname = surname;
 		this.degree = degree;
