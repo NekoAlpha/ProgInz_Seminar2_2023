@@ -43,7 +43,7 @@ public class Course {
 	private int creditPoints;
 	
 	
-	
+	//TODO izveidot argumenta konstruktoru
 	
 	
 	
