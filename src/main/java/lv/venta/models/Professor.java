@@ -54,6 +54,7 @@ public class Professor {
 	private Degree degree;
 
 	@OneToOne(mappedBy = "professor")//sasaistam ar otras klases mainīgo
+	@ToString.Exclude
 	private Course course;
 	
 	public Professor(String name, String surname, Degree degree) {

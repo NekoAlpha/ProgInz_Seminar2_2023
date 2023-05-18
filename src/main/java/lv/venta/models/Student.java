@@ -45,6 +45,7 @@ public class Student {
 	private String surname;
 
 	@OneToMany(mappedBy = "Student")
+	@ToString.Exclude
 	private Collection<Grade> grades;
 	
 	
