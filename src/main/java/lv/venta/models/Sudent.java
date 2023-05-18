@@ -42,7 +42,6 @@ public class Sudent {
 	private String surname;
 
 	public Sudent(String name, String surname) {
-		super();
 		this.name = name;
 		this.surname = surname;
 	}
