@@ -39,6 +39,9 @@ public class Grade {
 	@JoinColumn(name = "Ids")
 	private Student student;
 	
+	@ManyToOne
+	@JoinColumn(name = "Idc")
+	private Course course;
 	
 	
 	//TODO izveidot argumenta konstruktoru
