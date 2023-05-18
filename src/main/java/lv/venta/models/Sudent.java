@@ -1,10 +1,13 @@
 package lv.venta.models;
 
+import java.util.Collection;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -41,6 +44,10 @@ public class Sudent {
 	@Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem")
 	private String surname;
 
+	@OneToMany(mappedBy = "Sudent")
+	private Collection<Grade> grades;
+	
+	
 	public Sudent(String name, String surname) {
 		this.name = name;
 		this.surname = surname;
