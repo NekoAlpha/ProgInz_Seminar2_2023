@@ -24,7 +24,7 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Sudent {
+public class Student {
 	
 	@Setter(value = AccessLevel.NONE)
 	@Column(name = "Idst")//DB puse būs kolonna "idp" un būs kā auto increment PK
@@ -44,11 +44,11 @@ public class Sudent {
 	@Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem")
 	private String surname;
 
-	@OneToMany(mappedBy = "Sudent")
+	@OneToMany(mappedBy = "Student")
 	private Collection<Grade> grades;
 	
 	
-	public Sudent(String name, String surname) {
+	public Student(String name, String surname) {
 		this.name = name;
 		this.surname = surname;
 	}
