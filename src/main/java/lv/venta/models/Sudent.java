@@ -6,7 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -16,25 +15,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Table(name = "professor_table")
+@Table(name = "professor_student")
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
-public class Professor {
-	
-	//TODO uzlikt Data JPA anotācijas
-	//TODO uzlikt atbilstošās validāciju anotācijas
-	//TODO izveidot Student klasi
-	//TODO izveidot Course klasi
-	//TODO izveidot Grade klasi
+public class Sudent {
 	
 	@Setter(value = AccessLevel.NONE)
-	@Column(name = "Idp")//DB puse būs kolonna "idp" un būs kā auto increment PK
+	@Column(name = "Idst")//DB puse būs kolonna "idp" un būs kā auto increment PK
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idp;
+	private long idst;
 	
 	@Column(name = "Name")//DB puse būs kolonna title
 	@NotNull
@@ -47,17 +40,13 @@ public class Professor {
 	@Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam")
 	@Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem")
 	private String surname;
-	
-	@Column(name = "Degree")//DB puse būs kolonna title
-	@NotBlank
-	private Degree degree;
 
-	public Professor(String name, String surname, Degree degree) {
+	public Sudent(String name, String surname) {
 		super();
 		this.name = name;
 		this.surname = surname;
-		this.degree = degree;
 	}
+	
 	
 	
 	
