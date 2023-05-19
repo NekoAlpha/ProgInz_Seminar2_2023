@@ -1,5 +1,6 @@
 package lv.venta.models;
 
+import java.lang.reflect.Array;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -62,10 +63,10 @@ public class Course {
 
 	public Course(
 			@NotNull @Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam") @Size(min = 5, max = 25, message = "Jabūt vismaz 5 un ne vairāk kā 25 simboliem") String title,
-			@Min(1) @Max(20) int creditPoints, Professor professor) {
+			@Min(1) @Max(20) int creditPoints, ArrayList<Professor> professors) {
 		this.title = title;
 		this.creditPoints = creditPoints;
-		//this.professor = professor;
+		this.professors = professors;
 	}
 	
 	
@@ -76,7 +77,7 @@ public class Course {
 		}
 	}
 
-	
+	//TODO izveidot profesora izdzēšanas funkciju
 	
 	
 }
