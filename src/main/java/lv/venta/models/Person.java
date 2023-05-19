@@ -40,6 +40,13 @@ public class Person {
 	@Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam")
 	@Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem")
 	private String surname;
+
+	public Person(
+			@NotNull @Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam") @Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem") String name,
+			@NotNull @Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam") @Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem") String surname) {
+		this.name = name;
+		this.surname = surname;
+	}
 	
 	
 	

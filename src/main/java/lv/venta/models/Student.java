@@ -24,25 +24,8 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Student {
+public class Student extends Person{
 	
-	@Setter(value = AccessLevel.NONE)
-	@Column(name = "Idst")//DB puse būs kolonna "idp" un būs kā auto increment PK
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idst;
-	
-	@Column(name = "Name")//DB puse būs kolonna title
-	@NotNull
-	@Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam")
-	@Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem")
-	private String name;
-	
-	@Column(name = "Surname")//DB puse būs kolonna title
-	@NotNull
-	@Pattern(regexp = "[A-ZĒŪĪĻĶŠĀŽČŅ]{1}[a-zēūīļķšāžčņ\\ ]+", message = "Pirmajam burtam jābūt lielajam")
-	@Size(min = 3, max = 15, message = "Jabūt vismaz 3 un ne vairāk kā 15 simboliem")
-	private String surname;
 
 	@OneToMany(mappedBy = "student")
 	@ToString.Exclude
@@ -50,8 +33,7 @@ public class Student {
 	
 	
 	public Student(String name, String surname) {
-		this.name = name;
-		this.surname = surname;
+		super(name, surname);
 	}
 	
 	
